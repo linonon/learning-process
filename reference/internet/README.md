@@ -6,3 +6,5 @@
 [CORS解釋](https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS)
 [Leaf框架及代碼走讀](https://www.bookstack.cn/read/leaf/8c2d3569025d8414.md)
 [Golang游戏框架Leaf从懵逼到入门](https://aifore.github.io/2019/05/03/Golang游戏框架Leaf从懵逼到入门/)
+[Go 語言互斥鎖](https://mp.weixin.qq.com/s/rRPQ6YN15P7UODe1b7oyAA)
+[Go後端面試考題](https://mp.weixin.qq.com/s/2BBUcAPg8hLY7usmvf3coA)

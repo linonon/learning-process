@@ -10,3 +10,5 @@
   netsh advfirewall firewall add rule name=WSL2 dir=in action=allow protocol=TCP localport=2222
 a
 
+## TCP 窗口相關
+https://github.com/shadowsocks/shadowsocks-windows/issues/1875

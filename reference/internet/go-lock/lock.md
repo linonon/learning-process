@@ -241,3 +241,87 @@ if atomic.CompareAndSwapInt32(&m.state, old, new) {
     }
 }
 ```
+
+## 解鎖
+
+相對於加鎖操作, 解鎖的邏輯就沒有這麼複雜了, 接下來我們來看一看 Unlock 的邏輯:
+
+```go
+func (m *Mutex) Unlock() {
+    // Fast path: drop lock bit.
+    // 如果 m.state == 0 , 則表示當前鎖已經完全空閒, 結束解鎖
+    // m.state != 0 則說明當前鎖沒有被佔用, 但還有等待中且未被喚醒的 goroutine, 需要進行一系列喚醒操作, 這部分邏輯就在 unlockSlow 方法內:
+    new := atomic.AddInt32(&m.state, -mutexLocked)
+    if new != 0 {
+        // Outlined slow path to allow inlining the fast path
+        // To hide unlockSlow during tracing we skip one extra frame when tracing GoUnblock.
+        m.unlockSlow(new)
+    }
+}
+```
+
+unlockSlow():
+
+```go
+func (m *Mutex) unlockSlow(new int32) {
+    // 這裡表示解鎖了一個沒被上鎖的鎖, 則直接 Panic
+    if (new + mutexLocked) & mutexLocked == 0 {
+        panic("sync: unlock of unlocked mutex")
+    }
+
+    // 正常模式的釋放鎖邏輯
+    if new & mutexStarving == 0 {
+        old := new
+        for {
+            // 如果沒有等待者則直接返回即可
+            if old >> mutexWaiterShift == 0 {
+                return
+            }
+            // 如果鎖處於加鎖狀態, 則表示已經有 goroutine 獲取到了鎖, 可以返回 
+            if  old & (mutexLocked) != 0 {
+                return
+            }
+            // 如果鎖處於喚醒狀態, 這就表明 有等待的 goroutine 被喚醒了, 不用嘗試獲取其他 goroutine 了
+            if old & (mutexWoken) != 0 {
+                return
+            }
+            // 如果鎖處於飢餓模式, 鎖之後會直接給等待對頭 goroutine
+            if old & mutexStarving != 0 {
+                return 
+            }
+            // 搶佔喚醒標誌位, 這裡是想要把加鎖的狀態設置為喚醒, 然後 waiter 隊列-1 
+            new = (old-1 << mutexWaiterShift) | mutexWoken
+            if atomic.CompareAndSwapInt32(&m.state, old, new) {
+                // 搶佔成功喚醒一個 goroutine
+                runtime_Semrelease(&m.sema, false, 1)
+                return
+            }
+            // 執行搶佔不成功時重新更新一下狀態信息, 下次 for 循環繼續處理
+            old = m.state
+        }
+    } else {
+        runtime_Semrelease(&m.sema, true, 1)
+    }
+}
+```
+
+## 非阻塞加鎖
+
+非常簡潔的 TryLock():
+
+```go
+func (m *Mutex) TryLock() bool {
+    // 記錄當前狀態
+     old := m.state
+    // 處於加鎖狀態 / 飢餓狀態直接失敗
+    if old & (mutexLocked| mutexStarving) != 0 {
+        return false
+    }
+    // 嘗試獲取鎖, 獲取失敗直接失敗
+    if !atomic.CompareAndSwapInt32(&m.state, old,old|mutexLocked) {
+        return false
+    }
+
+    return true
+}
+```

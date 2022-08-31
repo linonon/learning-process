@@ -1,7 +1,0 @@
-@startuml sina-login-session
-!theme mars
-Client -> Server: Http Request
-Client <-> Server: Establish Session Correspondence
-Client -> Server : Get the content by session id
-Server -> Client: Return content
-@endum

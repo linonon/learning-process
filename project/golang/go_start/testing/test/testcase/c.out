@@ -1,9 +1,0 @@
-mode: set
-gostart/testing/test/testcase/cal.go:3.26,5.25 2 0
-gostart/testing/test/testcase/cal.go:8.2,8.12 1 0
-gostart/testing/test/testcase/cal.go:5.25,7.3 1 0
-gostart/testing/test/testcase/cal.go:10.27,12.26 2 1
-gostart/testing/test/testcase/cal.go:15.2,15.12 1 1
-gostart/testing/test/testcase/cal.go:12.26,14.3 1 1
-gostart/testing/test/testcase/cal.go:18.24,20.2 1 1
-gostart/testing/test/testcase/cal.go:22.14,24.2 0 0

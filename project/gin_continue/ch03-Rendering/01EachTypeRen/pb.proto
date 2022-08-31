@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "/pb";
+
+message Test {
+    string Label = 1;
+    repeated int64 Resp = 2;
+}

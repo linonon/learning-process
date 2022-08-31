@@ -1,0 +1,6 @@
+@startuml sina-login
+!theme mars
+Client -> Server: Http Request
+Server -> Client: Assignment Cookie
+Client -> Server: Http Request With Cooike
+@endum

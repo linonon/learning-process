@@ -607,3 +607,59 @@ graph LR
 ## 17 常见的控制问题
 
 ### 17.1.3 编写肯定形式的布尔型表达式
+
+DeMorgen 定律转化逻辑表达式
+
+## 18 布局与风格
+
+### 18.5
+
+#### 18.5.3 把相关的赋值语句对齐
+
+1. 等号未对齐
+
+    ```go
+    EmployeeName := InputName
+    EmployeeSalary := InputSalary
+    EmployeeBirthdate := InputBirthdate
+    BossTitle := Title
+    BossDept := Department
+    ```
+
+2. 等号对齐
+
+    ```go
+    EmployeeName      := InputName
+    EmployeeSalary    := InputSalary
+    EmployeeBirthdate := InputBirthdate
+    BossTitle         := Title
+    BossDept          := Department
+    ```
+
+3. 分类
+
+    ```go
+    EmployeeName      := InputName
+    EmployeeSalary    := InputSalary
+    EmployeeBirthdate := InputBirthdate
+
+    BossTitle         := Title
+    BossDept          := Department
+    ```
+
+## 19 文档
+
+### 19.1 外部文档
+
+- 大约要花工程的三分之二的力量
+
+### 19.2 编程风格作文档
+
+- 依靠好的编程风格来承担大部分的文档任务
+- 在好的编码中, 注释可称得上是"锦上添花"
+
+### 19.4 有效注释的关键
+
+- 反对在进行编程时注释的观点: "当你集中精力写代码时, 不应该分散精力去写注释".
+  - 正确的答案是, 假如你极其用心地写代码, 注释会打断你的思路, 则你需要先设计 PDL, 然后把 PDL 转化为注释.
+  - 需要集中精力写代码是一个警告信号, 假如你的代码很难, 在你对代码的注释担忧前应简化它.

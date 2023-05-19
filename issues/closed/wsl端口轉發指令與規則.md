@@ -1,6 +1,6 @@
 # Wsl 端口轉發指令與規則
 
-網站: https://zhuanlan.zhihu.com/p/355748937
+網站: <https://zhuanlan.zhihu.com/p/355748937>
 
 - 端口轉發到 wsl
   netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=2222 connectaddress=[IP] connectport=[PORT]
@@ -11,4 +11,5 @@
 a
 
 ## TCP 窗口相關
-https://github.com/shadowsocks/shadowsocks-windows/issues/1875
+
+<https://github.com/shadowsocks/shadowsocks-windows/issues/1875>

@@ -5,7 +5,38 @@
 - don't forget: `chmod a+x /etc/ppp/ip-up`
 
 ```sh
-# !/bin/sh -e
+#!/bin/sh -e
+
+# Define a function to check if an input is a valid IP address
+is_ip() {
+    echo $1 | grep -Eq "^([0-9]{1,3}\.){3}[0-9]{1,3}(/([0-9]|[12][0-9]|3[0-2]))?$"
+}
+
+# Define a function to resolve URL and add all resolved IPs to routes
+function add_route_from_url() {
+    local item=$1
+    local resolved
+    while true; do
+        resolved=$(dig +short $item)
+		echo "resolved: $resolved" >> $logfile
+        if [ -n "$resolved" ]; then
+            break
+        fi
+    done
+    for item in $resolved; do
+        if is_ip $item; then
+			if echo $item | grep -q '/'; then
+                /sbin/route add $item -interface $2 >> $logfile 2>&1
+            else
+                /sbin/route add $item/32 -interface $2 >> $logfile 2>&1
+            fi
+        else
+			echo "not ip, item:$item, 2:$2" >> $logfile
+            add_route_from_url $item $2
+        fi
+    done
+}
+
 now=`date +%Y-%m-%d_%Hh%Mm%Ss`
 logfile=/var/log/ip-up.log
 
@@ -17,11 +48,16 @@ echo "IP of the VPN server: $3" >> $logfile
 echo "VPN gateway address: $4" >> $logfile
 echo "Regular (non-vpn) gateway for your lan connections: $5" >> $logfile
 
-IPS=${6}
-for IP in ${IPS}
+for item in ${6}
 do
- /sbin/route add $IP -interface $1 >> $logfile 2>&1
+	echo "item is: $item" >> $logfile
+    if is_ip $item; then
+        /sbin/route add $item -interface $1 >> $logfile 2>&1
+    else
+        add_route_from_url $item $1
+    fi
 done
 
 echo "./ip-up DONE" >> $logfile
+
 ```

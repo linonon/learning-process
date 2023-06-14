@@ -19,3 +19,9 @@ set scrolloff=7
 如果你想立即看到效果，你可以在 vim 命令模式中輸入 `:set scrolloff=7`，並按回車。
 
 你可以按照需求調整這個值，以達到最滿意的結果。
+
+## Q: 如何複製到系統剪貼板
+## A: 
+```vimrc
+set clipboard=unnamed
+```

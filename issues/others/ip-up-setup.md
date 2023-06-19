@@ -16,6 +16,7 @@ is_ip() {
 function add_route_from_url() {
     local item=$1
     local resolved
+	local itemfix
     while true; do
         resolved=$(dig +short $item)
 		echo "resolved: $resolved" >> $logfile
@@ -26,13 +27,14 @@ function add_route_from_url() {
     for item in $resolved; do
         if is_ip $item; then
 			if echo $item | grep -q '/'; then
-                /sbin/route add $item -interface $2 >> $logfile 2>&1
+				itemfix=$item
             else
-                /sbin/route add $item/32 -interface $2 >> $logfile 2>&1
+				itemfix=$item/32
             fi
+			echo "add item: $itemfix" >> $logfile
+            /sbin/route add $itemfix -interface $2 >> $logfile 2>&1
         else
-			echo "not ip, item:$item, 2:$2" >> $logfile
-            add_route_from_url $item $2
+			echo "not ip, skip, item:$item, 2:$2" >> $logfile
         fi
     done
 }
@@ -59,5 +61,4 @@ do
 done
 
 echo "./ip-up DONE" >> $logfile
-
 ```

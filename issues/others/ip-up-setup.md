@@ -18,9 +18,11 @@ function add_route_from_url() {
     local resolved
 	local itemfix
     while true; do
-        resolved=$(dig +short $item)
-		echo "resolved: $resolved" >> $logfile
+        # resolved=$(dig +short $item)
+		resolved=$(/usr/bin/nslookup $item | grep 'Address: ' | tail -n1 | awk -F ': ' '{print $2}')
+		echo "this URL ip: $resolved" >> $logfile
         if [ -n "$resolved" ]; then
+			echo "can't resolved $item" > $logfile
             break
         fi
     done
@@ -31,10 +33,11 @@ function add_route_from_url() {
             else
 				itemfix=$item/32
             fi
-			echo "add item: $itemfix" >> $logfile
+			echo "format raw_ip/32: $itemfix" >> $logfile
             /sbin/route add $itemfix -interface $2 >> $logfile 2>&1
         else
 			echo "not ip, skip, item:$item, 2:$2" >> $logfile
+            # add_route_from_url $item $2
         fi
     done
 }
@@ -61,4 +64,5 @@ do
 done
 
 echo "./ip-up DONE" >> $logfile
+
 ```

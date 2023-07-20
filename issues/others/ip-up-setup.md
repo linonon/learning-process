@@ -17,15 +17,11 @@ function add_route_from_url() {
     local item=$1
     local resolved
 	local itemfix
-    while true; do
-        # resolved=$(dig +short $item)
-		resolved=$(/usr/bin/nslookup $item | grep 'Address: ' | tail -n1 | awk -F ': ' '{print $2}')
-		echo "this URL ip: $resolved" >> $logfile
-        if [ -n "$resolved" ]; then
-			echo "can't resolved $item" > $logfile
-            break
-        fi
-    done
+	resolved=$(/sbin/ping -c1 -W1 $item 2>/dev/null | awk -F'[()]' '/PING/{print $2}')
+	echo "it's ip: $resolved" >> $logfile
+    if [ -z "$resolved" ]; then
+		echo "can't resolved $item" > $logfile
+    fi
     for item in $resolved; do
         if is_ip $item; then
 			if echo $item | grep -q '/'; then
@@ -33,7 +29,7 @@ function add_route_from_url() {
             else
 				itemfix=$item/32
             fi
-			echo "format raw_ip/32: $itemfix" >> $logfile
+			echo "format ip: $itemfix" >> $logfile
             /sbin/route add $itemfix -interface $2 >> $logfile 2>&1
         else
 			echo "not ip, skip, item:$item, 2:$2" >> $logfile
@@ -55,7 +51,7 @@ echo "Regular (non-vpn) gateway for your lan connections: $5" >> $logfile
 
 for item in ${6}
 do
-	echo "item is: $item" >> $logfile
+	echo "\r\nitem is: $item" >> $logfile
     if is_ip $item; then
         /sbin/route add $item -interface $1 >> $logfile 2>&1
     else

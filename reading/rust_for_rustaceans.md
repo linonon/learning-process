@@ -28,3 +28,17 @@ annotation-target:: Rust-for-Rustaceans.pdf
 >%%TAGS%%
 >
 ^fi8rfs3gic6
+
+
+>%%
+>```annotation-json
+>{"created":"2023-09-05T14:41:51.350Z","text":"阴影做法, 上一个相同变量名的变量, 是这个变量的影子, 实体是这个变量","updated":"2023-09-05T14:41:51.350Z","document":{"title":"Rust-for-Rustaceans.pdf","link":[{"href":"urn:x-pdf:dcee1bbabcb61f52313b1e32dced5a17"},{"href":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf"}],"documentFingerprint":"dcee1bbabcb61f52313b1e32dced5a17"},"uri":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","target":[{"source":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","selector":[{"type":"TextPositionSelector","start":54622,"end":54691},{"type":"TextQuoteSelector","exact":"shadowing —the later variable “shadows” the former by the same name. ","prefix":"tinct variables. This is called ","suffix":"The two variables coexist, thoug"}]}]}
+>```
+>%%
+>*%%PREFIX%%tinct variables. This is called%%HIGHLIGHT%% ==shadowing —the later variable “shadows” the former by the same name.== %%POSTFIX%%The two variables coexist, thoug*
+>%%LINK%%[[#^jqaejw01m7|show annotation]]
+>%%COMMENT%%
+>阴影做法, 上一个相同变量名的变量, 是这个变量的影子, 实体是这个变量
+>%%TAGS%%
+>
+^jqaejw01m7

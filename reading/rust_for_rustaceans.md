@@ -42,3 +42,59 @@ annotation-target:: Rust-for-Rustaceans.pdf
 >%%TAGS%%
 >
 ^jqaejw01m7
+
+
+>%%
+>```annotation-json
+>{"created":"2023-09-12T14:18:05.048Z","text":"最重要的三个内存区域是堆栈、堆和静态内存","updated":"2023-09-12T14:18:05.048Z","document":{"title":"Rust-for-Rustaceans.pdf","link":[{"href":"urn:x-pdf:dcee1bbabcb61f52313b1e32dced5a17"},{"href":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf"}],"documentFingerprint":"dcee1bbabcb61f52313b1e32dced5a17"},"uri":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","target":[{"source":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","selector":[{"type":"TextPositionSelector","start":57230,"end":57269},{"type":"TextQuoteSelector","exact":"the stack, the heap, and static memory.","prefix":"poses of writ-ing Rust code are ","suffix":"The StackThe stack is a segment "}]}]}
+>```
+>%%
+>*%%PREFIX%%poses of writ-ing Rust code are%%HIGHLIGHT%% ==the stack, the heap, and static memory.== %%POSTFIX%%The StackThe stack is a segment*
+>%%LINK%%[[#^j75xr8aje1p|show annotation]]
+>%%COMMENT%%
+>最重要的三个内存区域是堆栈、堆和静态内存
+>%%TAGS%%
+>
+^j75xr8aje1p
+
+
+>%%
+>```annotation-json
+>{"created":"2023-09-12T14:20:46.506Z","text":"堆栈顶部分配一个连续的内存块，称为帧","updated":"2023-09-12T14:20:46.506Z","document":{"title":"Rust-for-Rustaceans.pdf","link":[{"href":"urn:x-pdf:dcee1bbabcb61f52313b1e32dced5a17"},{"href":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf"}],"documentFingerprint":"dcee1bbabcb61f52313b1e32dced5a17"},"uri":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","target":[{"source":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","selector":[{"type":"TextPositionSelector","start":57441,"end":57482},{"type":"TextQuoteSelector","exact":"frame is allocated at the top of the stac","prefix":"iguous chunk of memory called a ","suffix":"k.  Near the bottom of the stack"}]}]}
+>```
+>%%
+>*%%PREFIX%%iguous chunk of memory called a%%HIGHLIGHT%% ==frame is allocated at the top of the stac== %%POSTFIX%%k.  Near the bottom of the stack*
+>%%LINK%%[[#^ibhrzi1trjb|show annotation]]
+>%%COMMENT%%
+>堆栈顶部分配一个连续的内存块，称为帧
+>%%TAGS%%
+>
+^ibhrzi1trjb
+
+
+>%%
+>```annotation-json
+>{"created":"2023-09-12T14:21:04.823Z","text":"在 stack 的底部","updated":"2023-09-12T14:21:04.823Z","document":{"title":"Rust-for-Rustaceans.pdf","link":[{"href":"urn:x-pdf:dcee1bbabcb61f52313b1e32dced5a17"},{"href":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf"}],"documentFingerprint":"dcee1bbabcb61f52313b1e32dced5a17"},"uri":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","target":[{"source":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","selector":[{"type":"TextPositionSelector","start":57536,"end":57549},{"type":"TextQuoteSelector","exact":"main function","prefix":" the stack is the frame for the ","suffix":", and as functions call other fu"}]}]}
+>```
+>%%
+>*%%PREFIX%%the stack is the frame for the%%HIGHLIGHT%% ==main function== %%POSTFIX%%, and as functions call other fu*
+>%%LINK%%[[#^u17d8rngb6|show annotation]]
+>%%COMMENT%%
+>在 stack 的底部
+>%%TAGS%%
+>
+^u17d8rngb6
+
+
+>%%
+>```annotation-json
+>{"created":"2023-09-12T14:22:11.519Z","text":"存储在堆栈帧上的任何变量在帧消失后都不能被访问, 这点和 Rust 的 LifeTime 概念十分相似","updated":"2023-09-12T14:22:11.519Z","document":{"title":"Rust-for-Rustaceans.pdf","link":[{"href":"urn:x-pdf:dcee1bbabcb61f52313b1e32dced5a17"},{"href":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf"}],"documentFingerprint":"dcee1bbabcb61f52313b1e32dced5a17"},"uri":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","target":[{"source":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","selector":[{"type":"TextPositionSelector","start":58263,"end":58315},{"type":"TextQuoteSelector","exact":"very closely tied to the notion of lifetimes in Rust","prefix":" they eventually disappear, are ","suffix":". Any variable stored in a frame"}]}]}
+>```
+>%%
+>*%%PREFIX%%they eventually disappear, are%%HIGHLIGHT%% ==very closely tied to the notion of lifetimes in Rust== %%POSTFIX%%. Any variable stored in a frame*
+>%%LINK%%[[#^sghjpy5xfa|show annotation]]
+>%%COMMENT%%
+>存储在堆栈帧上的任何变量在帧消失后都不能被访问, 这点和 Rust 的 LifeTime 概念十分相似
+>%%TAGS%%
+>
+^sghjpy5xfa

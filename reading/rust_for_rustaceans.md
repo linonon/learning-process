@@ -98,3 +98,17 @@ annotation-target:: Rust-for-Rustaceans.pdf
 >%%TAGS%%
 >
 ^sghjpy5xfa
+
+
+>%%
+>```annotation-json
+>{"created":"2023-09-18T07:48:31.680Z","text":"给函数的返回值预先开辟空间","updated":"2023-09-18T07:48:31.680Z","document":{"title":"Rust-for-Rustaceans.pdf","link":[{"href":"urn:x-pdf:dcee1bbabcb61f52313b1e32dced5a17"},{"href":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf"}],"documentFingerprint":"dcee1bbabcb61f52313b1e32dced5a17"},"uri":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","target":[{"source":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","selector":[{"type":"TextPositionSelector","start":58778,"end":58947},{"type":"TextQuoteSelector","exact":"If that value is the function’s return value, the calling function can leave some space on its stack for the called function to write that value into before it returns. ","prefix":" the cur-rent function’s frame. ","suffix":"But if you want to, say, send th"}]}]}
+>```
+>%%
+>*%%PREFIX%%the cur-rent function’s frame.%%HIGHLIGHT%% ==If that value is the function’s return value, the calling function can leave some space on its stack for the called function to write that value into before it returns.== %%POSTFIX%%But if you want to, say, send th*
+>%%LINK%%[[#^m5jasdksdvb|show annotation]]
+>%%COMMENT%%
+>给函数的返回值预先开辟空间
+>%%TAGS%%
+>
+^m5jasdksdvb

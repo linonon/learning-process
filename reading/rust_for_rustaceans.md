@@ -112,3 +112,17 @@ annotation-target:: Rust-for-Rustaceans.pdf
 >%%TAGS%%
 >
 ^m5jasdksdvb
+
+
+>%%
+>```annotation-json
+>{"created":"2023-09-18T07:53:51.563Z","text":"函数的返回不会释放返回值的 memory","updated":"2023-09-18T07:53:51.563Z","document":{"title":"Rust-for-Rustaceans.pdf","link":[{"href":"urn:x-pdf:dcee1bbabcb61f52313b1e32dced5a17"},{"href":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf"}],"documentFingerprint":"dcee1bbabcb61f52313b1e32dced5a17"},"uri":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","target":[{"source":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","selector":[{"type":"TextPositionSelector","start":59442,"end":59512},{"type":"TextQuoteSelector","exact":"Since allocations from the heap do not go away when a function returns","prefix":"tion in the C standard library. ","suffix":", you can allocate memory for a "}]}]}
+>```
+>%%
+>*%%PREFIX%%tion in the C standard library.%%HIGHLIGHT%% ==Since allocations from the heap do not go away when a function returns== %%POSTFIX%%, you can allocate memory for a*
+>%%LINK%%[[#^3dhr46yqdte|show annotation]]
+>%%COMMENT%%
+>函数的返回不会释放返回值的 memory
+>%%TAGS%%
+>
+^3dhr46yqdte

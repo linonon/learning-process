@@ -126,3 +126,17 @@ annotation-target:: Rust-for-Rustaceans.pdf
 >%%TAGS%%
 >
 ^3dhr46yqdte
+
+
+>%%
+>```annotation-json
+>{"created":"2023-09-19T09:54:18.884Z","text":"通常给一些全局的變量來使用","updated":"2023-09-19T09:54:18.884Z","document":{"title":"Rust-for-Rustaceans.pdf","link":[{"href":"urn:x-pdf:dcee1bbabcb61f52313b1e32dced5a17"},{"href":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf"}],"documentFingerprint":"dcee1bbabcb61f52313b1e32dced5a17"},"uri":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","target":[{"source":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","selector":[{"type":"TextPositionSelector","start":60573,"end":60582},{"type":"TextQuoteSelector","exact":"Box::leak","prefix":"eap and explicitly leak it with ","suffix":" to get a 'static reference to i"}]}]}
+>```
+>%%
+>*%%PREFIX%%eap and explicitly leak it with%%HIGHLIGHT%% ==Box::leak== %%POSTFIX%%to get a 'static reference to i*
+>%%LINK%%[[#^5w5x9d5qbd6|show annotation]]
+>%%COMMENT%%
+>通常给一些全局的變量來使用
+>%%TAGS%%
+>
+^5w5x9d5qbd6

@@ -140,3 +140,17 @@ annotation-target:: Rust-for-Rustaceans.pdf
 >%%TAGS%%
 >
 ^5w5x9d5qbd6
+
+
+>%%
+>```annotation-json
+>{"created":"2023-09-19T10:02:41.485Z","text":"最常见的 'static , 从一个线程创建的另一个线程不会被这个线程的生命周期约束, 同时另一个线程也不能 refer 任何这个线程的东西, 另一个线程里的任何变量的生命周期只能跟随该线程的生命周期","updated":"2023-09-19T10:02:41.485Z","document":{"title":"Rust-for-Rustaceans.pdf","link":[{"href":"urn:x-pdf:dcee1bbabcb61f52313b1e32dced5a17"},{"href":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf"}],"documentFingerprint":"dcee1bbabcb61f52313b1e32dced5a17"},"uri":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","target":[{"source":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","selector":[{"type":"TextPositionSelector","start":62774,"end":62792},{"type":"TextQuoteSelector","exact":"std::thread::spawn","prefix":"le of 'static as a bound is the ","suffix":" function that creates a new thr"}]}]}
+>```
+>%%
+>*%%PREFIX%%le of 'static as a bound is the%%HIGHLIGHT%% ==std::thread::spawn== %%POSTFIX%%function that creates a new thr*
+>%%LINK%%[[#^lznq38gylb|show annotation]]
+>%%COMMENT%%
+>最常见的 'static , 从一个线程创建的另一个线程不会被这个线程的生命周期约束, 同时另一个线程也不能 refer 任何这个线程的东西, 另一个线程里的任何变量的生命周期只能跟随该线程的生命周期
+>%%TAGS%%
+>
+^lznq38gylb

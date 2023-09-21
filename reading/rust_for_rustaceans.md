@@ -154,3 +154,17 @@ annotation-target:: Rust-for-Rustaceans.pdf
 >%%TAGS%%
 >
 ^lznq38gylb
+
+
+>%%
+>```annotation-json
+>{"created":"2023-09-21T05:18:01.956Z","text":"copy trait 会是按位复制","updated":"2023-09-21T05:18:01.956Z","document":{"title":"Rust-for-Rustaceans.pdf","link":[{"href":"urn:x-pdf:dcee1bbabcb61f52313b1e32dced5a17"},{"href":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf"}],"documentFingerprint":"dcee1bbabcb61f52313b1e32dced5a17"},"uri":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","target":[{"source":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","selector":[{"type":"TextPositionSelector","start":64823,"end":64841},{"type":"TextQuoteSelector","exact":"copying their bits","prefix":"ate the type’s values simply by ","suffix":". This eliminates all types that"}]}]}
+>```
+>%%
+>*%%PREFIX%%ate the type’s values simply by%%HIGHLIGHT%% ==copying their bits== %%POSTFIX%%. This eliminates all types that*
+>%%LINK%%[[#^o35dm1hmx4|show annotation]]
+>%%COMMENT%%
+>copy trait 会是按位复制
+>%%TAGS%%
+>
+^o35dm1hmx4

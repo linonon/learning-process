@@ -168,3 +168,17 @@ annotation-target:: Rust-for-Rustaceans.pdf
 >%%TAGS%%
 >
 ^o35dm1hmx4
+
+
+>%%
+>```annotation-json
+>{"created":"2023-09-28T06:20:52.002Z","updated":"2023-09-28T06:20:52.002Z","document":{"title":"Rust-for-Rustaceans.pdf","link":[{"href":"urn:x-pdf:dcee1bbabcb61f52313b1e32dced5a17"},{"href":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf"}],"documentFingerprint":"dcee1bbabcb61f52313b1e32dced5a17"},"uri":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","target":[{"source":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","selector":[{"type":"TextPositionSelector","start":80673,"end":80730},{"type":"TextQuoteSelector","exact":"It just so happens that that new variable is also named z","prefix":"s only from that point forward. ","suffix":". With that model in mind, this "}]}]}
+>```
+>%%
+>*%%PREFIX%%s only from that point forward.%%HIGHLIGHT%% ==It just so happens that that new variable is also named z== %%POSTFIX%%. With that model in mind, this*
+>%%LINK%%[[#^fdny1zg7km4|show annotation]]
+>%%COMMENT%%
+>
+>%%TAGS%%
+>
+^fdny1zg7km4

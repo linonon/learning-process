@@ -182,3 +182,17 @@ annotation-target:: Rust-for-Rustaceans.pdf
 >%%TAGS%%
 >
 ^fdny1zg7km4
+
+
+>%%
+>```annotation-json
+>{"created":"2023-09-28T07:33:53.603Z","text":"方差是一个统计量，用于衡量数据分布的离散程度。简单来说，方差越大，数据点越分散；方差越小，数据点越集中。在编程中，方差通常用于评估算法的性能和稳定性。","updated":"2023-09-28T07:33:53.603Z","document":{"title":"Rust-for-Rustaceans.pdf","link":[{"href":"urn:x-pdf:dcee1bbabcb61f52313b1e32dced5a17"},{"href":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf"}],"documentFingerprint":"dcee1bbabcb61f52313b1e32dced5a17"},"uri":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","target":[{"source":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","selector":[{"type":"TextPositionSelector","start":84242,"end":84360},{"type":"TextQuoteSelector","exact":"Variance is a concept that programmers are often exposed to but rarely know the name of because it’s mostly invisible.","prefix":"eject the code.Lifetime Variance","suffix":" At a glance, variance describes"}]}]}
+>```
+>%%
+>*%%PREFIX%%eject the code.Lifetime Variance%%HIGHLIGHT%% ==Variance is a concept that programmers are often exposed to but rarely know the name of because it’s mostly invisible.== %%POSTFIX%%At a glance, variance describes*
+>%%LINK%%[[#^0etjp6q4oqw|show annotation]]
+>%%COMMENT%%
+>方差是一个统计量，用于衡量数据分布的离散程度。简单来说，方差越大，数据点越分散；方差越小，数据点越集中。在编程中，方差通常用于评估算法的性能和稳定性。
+>%%TAGS%%
+>
+^0etjp6q4oqw

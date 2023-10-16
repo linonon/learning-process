@@ -210,3 +210,17 @@ annotation-target:: Rust-for-Rustaceans.pdf
 >%%TAGS%%
 >
 ^g3mm9mzk1p8
+
+
+>%%
+>```annotation-json
+>{"created":"2023-10-16T08:21:56.466Z","text":"Rust 提供了 repr(C) -- representation C. 让编译出来的变成 C 的 layout. 在 unsafe 的类别转换上也常用到","updated":"2023-10-16T08:21:56.466Z","document":{"title":"Rust-for-Rustaceans.pdf","link":[{"href":"urn:x-pdf:dcee1bbabcb61f52313b1e32dced5a17"},{"href":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf"}],"documentFingerprint":"dcee1bbabcb61f52313b1e32dced5a17"},"uri":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","target":[{"source":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","selector":[{"type":"TextPositionSelector","start":95248,"end":95449},{"type":"TextQuoteSelector","exact":"Rust provides a repr attribute you can add to your type definitions to request a particular in-memory rep-resentation for that type. The most common one you will see, if you see one at all, is repr(C).","prefix":"underlying principles. Luckily, ","suffix":" As the name suggests, it lays o"}]}]}
+>```
+>%%
+>*%%PREFIX%%underlying principles. Luckily,%%HIGHLIGHT%% ==Rust provides a repr attribute you can add to your type definitions to request a particular in-memory rep-resentation for that type. The most common one you will see, if you see one at all, is repr(C).== %%POSTFIX%%As the name suggests, it lays o*
+>%%LINK%%[[#^rkkl7l7nz9r|show annotation]]
+>%%COMMENT%%
+>Rust 提供了 repr(C) -- representation C. 让编译出来的变成 C 的 layout. 在 unsafe 的类别转换上也常用到
+>%%TAGS%%
+>
+^rkkl7l7nz9r

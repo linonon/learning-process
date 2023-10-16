@@ -196,3 +196,17 @@ annotation-target:: Rust-for-Rustaceans.pdf
 >%%TAGS%%
 >
 ^0etjp6q4oqw
+
+
+>%%
+>```annotation-json
+>{"created":"2023-10-16T08:17:41.079Z","text":"字節對齊","updated":"2023-10-16T08:17:41.079Z","document":{"title":"Rust-for-Rustaceans.pdf","link":[{"href":"urn:x-pdf:dcee1bbabcb61f52313b1e32dced5a17"},{"href":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf"}],"documentFingerprint":"dcee1bbabcb61f52313b1e32dced5a17"},"uri":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","target":[{"source":"vault:/learning-process/reading/Rust-for-Rustaceans.pdf","selector":[{"type":"TextPositionSelector","start":91577,"end":91586},{"type":"TextQuoteSelector","exact":"Alignment","prefix":"nd the performance of your code.","suffix":"Before we talk about how a type’"}]}]}
+>```
+>%%
+>*%%PREFIX%%nd the performance of your code.%%HIGHLIGHT%% ==Alignment== %%POSTFIX%%Before we talk about how a type’*
+>%%LINK%%[[#^g3mm9mzk1p8|show annotation]]
+>%%COMMENT%%
+>字節對齊
+>%%TAGS%%
+>
+^g3mm9mzk1p8

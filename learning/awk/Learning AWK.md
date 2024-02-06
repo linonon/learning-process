@@ -1,5 +1,6 @@
 ---
 topic: 大綱
+aliases:
 ---
 
 ```dataview

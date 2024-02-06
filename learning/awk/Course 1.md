@@ -2,7 +2,7 @@
 tags:
   - note
 topic: AWK 簡介
-aliases:
+home page: "[[Learning AWK]]"
 ---
 ### AWK 的歷史和背景
 

@@ -7,18 +7,6 @@ aliases:
 table topic as 主題 from "learning-process/learning/awk"
 ```
 
-
-### 第1節：AWK 簡介
-- AWK 的歷史和背景
-- AWK 的應用場景
-- 基本的 AWK 工作流程和架構
-
-### 第2節：AWK 基礎
-
-- AWK 的基本語法
-- 執行 AWK 程序的方法
-- 簡單的打印命令
-
 ### 第3節：處理文本和字段
 
 - 字段分割

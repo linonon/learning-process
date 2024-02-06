@@ -4,7 +4,11 @@ aliases:
 ---
 
 ```dataview
-table topic as 主題 from "learning-process/learning/awk"
+
+TABLE topic AS 主題 
+FROM "learning-process/learning/awk" 
+SORT topic DESC
+
 ```
 
 ### 第3節：處理文本和字段

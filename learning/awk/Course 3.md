@@ -66,3 +66,47 @@ Charlie,Chicago
 ```
 
 通過這些基本的操作和變量設置，AWK 使得文本和字段的處理變得非常靈活和強大。瞭解如何有效地分割和操作字段是使用 AWK 進行文本處理的關鍵。
+
+當然可以。AWK 提供了一系列的內置變量，這些變量在文本處理中非常有用。除了前面提到的 `FS`（字段分隔符）和 `OFS`（輸出字段分隔符）之外，還有其他一些重要的內置變量：
+
+### `NR`：Number of Records
+
+`NR` 保存了到目前為止讀取的輸入記錄（行）的數量。這在處理多行輸入時非常有用，比如，打印文件的當前行號：
+
+```awk
+awk '{print NR, $0}' filename
+```
+
+這會在每行的開頭加上該行的行號和原始內容。
+
+### `NF`：Number of Fields in the Current Record
+`NF` 表示當前記錄中的字段數量。這在需要處理具有不同字段數的行時特別有用，比如，打印每行的最後一個字段：
+
+```awk
+awk '{print $NF}' filename
+```
+
+### `FNR`：File Number of Records
+`FNR` 是對於當前輸入文件的紀錄數（與 `NR` 類似，但 `FNR` 會在每個新文件開始時重置為1）。當同時處理多個文件時，`FNR` 對於區分每個文件中的記錄位置很有用。
+
+```awk
+awk '{print FNR, $0}' file1 file2
+```
+
+### `RS`：Record Separator
+`RS` 定義了一條記錄的結束符，默認是換行符。這在讀取多行記錄的文件時非常有用，比如，設置 `RS` 為空白行來處理段落或記錄塊。
+
+### `ORS`：Output Record Separator
+`ORS` 用於定義輸出中記錄之間的分隔符，默認值同樣是換行符。這對於改變輸出格式非常有用。
+
+```awk
+BEGIN { ORS = "\n\n" } { print }
+```
+
+### `ARGV`、`ARGC`：Argument Vector and Argument Count
+這些變量分別用於存儲命令行參數和參數的數量，使得 AWK 腳本可以處理傳遞給它的參數。
+
+### `ENVIRON`：Environment Variables
+`ENVIRON` 是一個關聯數組，包含了當前環境的環境變量。可以使用 `ENVIRON["HOME"]` 這樣的語法來訪問特定的環境變量。
+
+這些內置變量擴展了 AWK 的功能，使其能夠更加靈活和強大地處理各種文本處理任務。通过結合使用這些變量，可以實現從簡單的文本處理到複雜的數據分析的各種操作。

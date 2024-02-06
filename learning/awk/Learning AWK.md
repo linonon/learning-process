@@ -7,15 +7,9 @@ aliases:
 
 TABLE topic AS 主題 
 FROM "learning-process/learning/awk" 
-SORT topic DESC
+SORT file ASC
 
 ```
-
-### 第3節：處理文本和字段
-
-- 字段分割
-- 打印特定字段
-- 使用內置變量（如 FS, OFS）
 
 ### 第4節：模式和動作
 

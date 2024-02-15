@@ -64,4 +64,26 @@ func (ac *ActionController) receiveAction(id uint64) {
 }
 ```
 
-但是現在有一個問題:
+然後傳入消息的時候使用這個 function:
+```go
+// SendPlayerActionReq 將玩家動作請求發送到對應的 reqChan
+func (ac *ActionController) SendPlayerActionReq(id uint64, req any) {
+	uc, ok := ac.userInfoMap.Load(id)
+	if !ok {
+		log.Warn("SendPlayerActionReq: user(%v) info not exist!\n", id)
+		return
+	}
+
+	if !uc.isUserTurn {
+		log.Warn("SendPlayerActionReq: user(%v) not in turn, ignore\n", id)
+		return
+	}
+
+		uc.reqChan <- req
+}
+```
+
+現在有個問題是: 我的請求會通過 channel 傳入, 然後再被處理(uc.reqChan <- req)
+
+但是我現在希望的是, 如果 actionHandler 有工作在處理的時候, 就不能傳進去, 請問這個功能要怎麼做?
+

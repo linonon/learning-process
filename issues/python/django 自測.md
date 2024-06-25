@@ -1,4 +1,6 @@
 
+#python
+
 ```python
 python  manage.py shell < test_local.py
 ```

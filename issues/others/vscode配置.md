@@ -1,5 +1,12 @@
 # Vscode 配置
 
+## 檢查編輯器的變化
+
+1. 先打開 `Toggle Develop Tools`
+2. 然後再 `Inspect context keys`, 並把資料記錄下來
+3. 對比資料, 找出條件
+
+
 ## keymap
 
 ### vim mode 下

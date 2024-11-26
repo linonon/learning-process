@@ -1,4 +1,4 @@
-# Terminal 指紋密碼
+# Terminal 指紋密碼 touch ID
 
 [link](https://zhuanlan.zhihu.com/p/31529925)
 
